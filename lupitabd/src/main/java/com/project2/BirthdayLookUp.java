@@ -40,17 +40,17 @@ public class BirthdayLookUp {
     Boolean isValid;
 
     // how to read user input from keyboard
-    System.out.println("Reading user input into a string");
+    System.out.println("\nReading user input into a string\n");
       
     // get user input
     Scanner input = new Scanner(System.in);
 
     do {  // Repeat until HashMap returns a birthday  
-      System.out.print("Enter a name:");
+      System.out.print("Enter a name:   ");
       String lupitaFriend = input.nextLine();
 
       // print user input
-      System.out.println("Searching for: " + lupitaFriend + "\n\n");
+      System.out.println("\nSearching for:   " + lupitaFriend + "\n\n");
 
       // reads a json data file
       String pathToFile = "/Users/teneaallen/Desktop/Fall 2022 /Java Programming/Assignments/Week_7/Lupita_BDay_LookUp/lupitabd/src/main/java/com/project2/birthday.json";
