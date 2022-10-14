@@ -53,7 +53,7 @@ public class BirthdayLookUp {
       System.out.println("Searching for: " + lupitaFriend + "\n\n");
 
       // reads a json data file
-      String pathToFile = "/Users/teneaallen/Desktop/Fall 2022 /Java Programming/Assignments/Week_7/Lupita_BDay_LookUp/lupitabd/src/main/java/com/project2/birthdayOnlyForTesting.json";
+      String pathToFile = "/Users/teneaallen/Desktop/Fall 2022 /Java Programming/Assignments/Week_7/Lupita_BDay_LookUp/lupitabd/src/main/java/com/project2/birthday.json";
 
       JSONArray jsonData = readJSONArrayFile(pathToFile);
 
