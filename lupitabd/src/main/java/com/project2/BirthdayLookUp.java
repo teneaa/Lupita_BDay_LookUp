@@ -77,7 +77,7 @@ public class BirthdayLookUp {
 
       // Conditions for printing and repeating user input
       if (lupitaHashMap.get(lupitaFriend) == null) {
-        System.out.println("That name was not found, try again");
+        System.out.println("That name was not found, try again\n");
         isValid = false;
       } else {
         System.out.println(lupitaFriend + "'s birthday is: " + lupitaHashMap.get(lupitaFriend) + "\n\n");
