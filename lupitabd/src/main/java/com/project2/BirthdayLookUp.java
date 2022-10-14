@@ -5,7 +5,7 @@ import java.util.*;
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
-public class BirthdayExample {
+public class BirthdayLookUp {
 
   // Func: ReadJSONFile
   // Desc: Reads a json file storing an array and returns an object
