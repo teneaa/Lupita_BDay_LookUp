@@ -7,15 +7,11 @@ import org.json.simple.parser.*;
 
 public class BirthdayExample {
 
-  //
   // Func: ReadJSONFile
   // Desc: Reads a json file storing an array and returns an object
   // that can be iterated over
-  //
+
   public static JSONArray readJSONArrayFile(String fileName) {
-    //
-    // read the birthday.json file and iterate over it
-    //
 
     // JSON parser object to parse read file
     JSONParser jsonParser = new JSONParser();
@@ -84,11 +80,11 @@ public class BirthdayExample {
         System.out.println("That name was not found, try again");
         isValid = false;
       } else {
-        System.out.println(lupitaFriend + "'s birthday is: " + lupitaHashMap.get(lupitaFriend) + "\n\n" + lupitaHashMap);
+        System.out.println(lupitaFriend + "'s birthday is: " + lupitaHashMap.get(lupitaFriend) + "\n\n");
         isValid = true;
       }
     } while( (isValid == false) );
-    
+
     // close the scanner
     input.close();
   }
