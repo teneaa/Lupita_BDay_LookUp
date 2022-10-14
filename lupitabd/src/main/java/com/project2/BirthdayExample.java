@@ -39,47 +39,57 @@ public class BirthdayExample {
   }
 
   public static void main(final String[] args) {
-    //
-    // how to read user input from keyboard
-    //
-    System.out.println("Reading user input into a string");
 
+    //Bool to assess whether a birthday match can be extracted from data file
+    Boolean isValid;
+
+    // how to read user input from keyboard
+    System.out.println("Reading user input into a string");
+      
     // get user input
     Scanner input = new Scanner(System.in);
-    System.out.print("Enter a name:");
-    String name = input.nextLine();
 
-    // print user input
-    System.out.println("name = " + name);
+    do {  // Repeat until HashMap returns a birthday  
+      System.out.print("Enter a name:");
+      String lupitaFriend = input.nextLine();
 
+      // print user input
+      System.out.println("Searching for: " + lupitaFriend + "\n\n");
+
+      // reads a json data file
+      String pathToFile = "/Users/teneaallen/Desktop/Fall 2022 /Java Programming/Assignments/Week_7/Lupita_BDay_LookUp/lupitabd/src/main/java/com/project2/birthdayOnlyForTesting.json";
+
+      JSONArray jsonData = readJSONArrayFile(pathToFile);
+
+      // Create HashMap to retrieve specific info from JSON object
+      HashMap<String, String> lupitaHashMap = new HashMap<>();
+
+      // loop over list
+      JSONObject obj;
+      for (Integer i = 0; i < jsonData.size(); i++) {
+        // parse the object and pull out the name and birthday
+
+        obj = (JSONObject) jsonData.get(i);
+        String birthday;
+
+        String name = (String) obj.get("name");
+        birthday = (String) obj.get("birthday");
+
+        // Put object data into HashMap
+        lupitaHashMap.put((name), (birthday)); 
+      }
+
+      // Conditions for printing and repeating user input
+      if (lupitaHashMap.get(lupitaFriend) == null) {
+        System.out.println("That name was not found, try again");
+        isValid = false;
+      } else {
+        System.out.println(lupitaFriend + "'s birthday is: " + lupitaHashMap.get(lupitaFriend) + "\n\n" + lupitaHashMap);
+        isValid = true;
+      }
+    } while( (isValid == false) );
+    
     // close the scanner
     input.close();
-
-    //
-    // reads a json data file
-    //
-
-    /*
-     * students will need to change the path below to work on THEIR laptop. this is currently the path for my laptop.
-     * if students do not know or understand what a "path" is, students should first complete the
-     * extra credit module on Files, Directories, and Folders in Canvas.
-     */
-    String pathToFile = "/Users/teneaallen/Desktop/Fall 2022 /Java Programming/Assignments/Week_7/Lupita_BDay_LookUp/lupitabd/src/main/java/com/project2/birthdayOnlyForTesting.json";
-
-    JSONArray jsonData = readJSONArrayFile(pathToFile);
-
-    // loop over list
-    String birthday;
-    JSONObject obj;
-    for (Integer i = 0; i < jsonData.size(); i++) {
-      // parse the object and pull out the name and birthday
-      obj = (JSONObject) jsonData.get(i);
-      birthday = (String) obj.get("birthday");
-      name = (String) obj.get("name");
-
-      // print the names and birthdays
-      System.out.println("name = " + name);
-      System.out.println("birthday = " + birthday);
-    }
   }
 }
