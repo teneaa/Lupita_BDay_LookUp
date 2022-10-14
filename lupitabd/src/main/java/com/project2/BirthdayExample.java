@@ -64,8 +64,7 @@ public class BirthdayExample {
      * if students do not know or understand what a "path" is, students should first complete the
      * extra credit module on Files, Directories, and Folders in Canvas.
      */
-    String pathToFile =
-      "/com/project2/OnlyforTesting.json";
+    String pathToFile = "/Users/teneaallen/Desktop/Fall 2022 /Java Programming/Assignments/Week_7/Lupita_BDay_LookUp/lupitabd/src/main/java/com/project2/birthdayOnlyForTesting.json";
 
     JSONArray jsonData = readJSONArrayFile(pathToFile);
 
