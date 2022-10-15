@@ -63,8 +63,8 @@ public class BirthdayLookUp {
       // loop over list
       JSONObject obj;
       for (Integer i = 0; i < jsonData.size(); i++) {
+        
         // parse the object and pull out the name and birthday
-
         obj = (JSONObject) jsonData.get(i);
 
         String name = (String) obj.get("name");
