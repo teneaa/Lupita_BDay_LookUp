@@ -66,10 +66,9 @@ public class BirthdayLookUp {
         // parse the object and pull out the name and birthday
 
         obj = (JSONObject) jsonData.get(i);
-        String birthday;
 
         String name = (String) obj.get("name");
-        birthday = (String) obj.get("birthday");
+        String birthday = (String) obj.get("birthday");
 
         // Put object data into HashMap
         lupitaHashMap.put((name), (birthday)); 
